@@ -10,3 +10,14 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+docroot/WEB-INF/classes
+docroot/WEB-INF/tld/aui.tld
+docroot/WEB-INF/tld/liferay-portlet-ext.tld
+docroot/WEB-INF/tld/liferay-portlet.tld
+docroot/WEB-INF/tld/liferay-security.tld
+docroot/WEB-INF/tld/liferay-theme.tld
+docroot/WEB-INF/tld/liferay-ui.tld
+docroot/WEB-INF/tld/liferay-util.tld
+.classpath
+.project
+.tern-project
