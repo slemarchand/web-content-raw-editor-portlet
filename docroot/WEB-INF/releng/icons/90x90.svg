@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="90"
+   height="90"
+   viewBox="0 0 90.000001 90.000001"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="90x90.svg"
+   inkscape:export-filename="/Users/sebastien/Work/Liferay/liferay-plugins-sdk-6.2/portlets/web-content-raw-editor-portlet/docroot/WEB-INF/releng/icons/90x90.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient4195"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4197" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4195"
+       id="linearGradient4469"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.70216411,0,0,0.70216411,24.95231,327.50168)"
+       x1="46.751571"
+       y1="914.57063"
+       x2="89.045367"
+       y2="914.57063" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="10.119484"
+     inkscape:cx="70.319146"
+     inkscape:cy="79.88403"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="800"
+     inkscape:window-x="50"
+     inkscape:window-y="60"
+     inkscape:window-maximized="0"
+     units="px"
+     showguides="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-962.36216)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:125%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="13.289011"
+       y="1023.728"
+       id="text3377"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3379"
+         x="13.289011"
+         y="1023.728">WC</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:1.60000002;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3381"
+       width="83.812248"
+       height="82.712456"
+       x="3.1554618"
+       y="966.06598"
+       ry="9.8819275" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.79605949;stroke-linejoin:miter;stroke-miterlimit:1.60000002;stroke-dasharray:none;stroke-opacity:1"
+       d="m 47.359172,962.38873 42.903611,0 0,15.04801 -34.194303,0 z"
+       id="rect4189"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.39290237px;line-height:125%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient4469);fill-opacity:1;stroke:none;stroke-width:0.477;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="56.985695"
+       y="974.55566"
+       id="text4191"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4193"
+         x="56.985695"
+         y="974.55566"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.39290237px;line-height:125%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient4469);fill-opacity:1;stroke:none;stroke-width:0.477;stroke-miterlimit:4;stroke-dasharray:none">SLM</tspan></text>
+  </g>
+</svg>
