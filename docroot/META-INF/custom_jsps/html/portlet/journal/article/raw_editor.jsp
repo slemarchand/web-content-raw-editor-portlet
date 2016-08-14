@@ -105,7 +105,7 @@ boolean hasUpdatePermission = JournalArticlePermission.contains(permissionChecke
 			                destroyOnHide: true
 			            }
 			        }).after('destroy', function(event) {
-			        	if(window._1_WAR_webcontentraweditorportlet_reloadRequired) {
+			        	if(window._<%= portletId %>_reloadRequired) {
 			        		
 			        		new A.LoadingMask({		
 								target: A.one('.portlet-content')

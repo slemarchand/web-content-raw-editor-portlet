@@ -11,6 +11,7 @@ import com.liferay.portal.util.PortalUtil;
 import com.liferay.portlet.PortletURLFactoryUtil;
 import com.liferay.portlet.journal.model.JournalArticle;
 import com.liferay.portlet.journal.service.JournalArticleServiceUtil;
+import com.slemarchand.webcontentraweditor.util.PortletKeys;
 
 import javax.portlet.PortletRequest;
 import javax.servlet.http.HttpServletRequest;
@@ -44,7 +45,7 @@ public class WebContentRawEditorAction extends BaseStrutsAction {
 		long id = article.getId();
 				
 		LiferayPortletURL url = PortletURLFactoryUtil.create(
-				request, "1_WAR_webcontentraweditorportlet", PortalUtil.getControlPanelPlid(companyId),
+				request, PortletKeys.WEB_CONTENT_RAW_EDITOR, PortalUtil.getControlPanelPlid(companyId),
 				PortletRequest.RENDER_PHASE);
 		
 		url.setWindowState(LiferayWindowState.POP_UP);
