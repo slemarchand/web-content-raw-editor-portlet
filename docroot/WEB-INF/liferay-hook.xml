@@ -10,6 +10,9 @@
 		content/Language.properties
 	</language-properties>
 	<custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
-
+	<struts-action>
+		<struts-action-path>/portal/wcre</struts-action-path>
+		<struts-action-impl>com.slemarchand.webcontentraweditor.hook.action.WebContentRawEditorAction</struts-action-impl>
+	</struts-action>
 
 </hook>
