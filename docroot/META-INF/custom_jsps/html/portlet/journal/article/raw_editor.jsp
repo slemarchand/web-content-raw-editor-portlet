@@ -94,14 +94,27 @@ boolean hasUpdatePermission = JournalArticlePermission.contains(permissionChecke
 
 					var title = '<%= HtmlUtil.escapeJS(article.getTitle(locale)) %>';
 					var uri = '<%= HtmlUtil.escapeJS(rawEditorPortletURL.toString()) %>';
-
-					Liferay.Util.openWindow(
-						{
-							cache: false,
-							title: title,
-							uri: uri
-						}
-					);
+					
+					Liferay.Util.Window.getWindow({
+						title: title,
+						uri: uri,
+			            dialog: {
+			            	openingWindow: window,
+			                modal: true,
+			                cache: false,
+			                destroyOnHide: true
+			            }
+			        }).after('destroy', function(event) {
+			        	if(window._1_WAR_webcontentraweditorportlet_reloadRequired) {
+			        		
+			        		new A.LoadingMask({		
+								target: A.one('.portlet-content')
+							}).show();
+			        		
+			        		window.location.reload(true);
+			        	}
+			        });
+	
 				}
 				else if (confirm('<liferay-ui:message key="in-order-to-open-raw-editor,-the-web-content-will-be-saved-as-a-draft" />')) {
 					var hasStructure = window.<portlet:namespace />journalPortlet.hasStructure();

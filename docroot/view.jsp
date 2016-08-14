@@ -104,6 +104,8 @@ boolean hasUpdatePermission = JournalArticlePermission.contains(permissionChecke
 			document.<portlet:namespace />fm.<portlet:namespace />content.value = window.<portlet:namespace />editor.get('value');
 
 			submitForm(document.<portlet:namespace />fm);
+			
+			window.parent.<portlet:namespace />reloadRequired = true;
 		},
 		['aui-base']
 	);
