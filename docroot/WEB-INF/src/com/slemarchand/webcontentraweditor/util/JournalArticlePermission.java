@@ -17,6 +17,7 @@ package com.slemarchand.webcontentraweditor.util;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ClassResolverUtil;
+import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.MethodKey;
 import com.liferay.portal.kernel.util.PortalClassInvoker;
 import com.liferay.portal.security.permission.PermissionChecker;
@@ -50,7 +51,7 @@ public class JournalArticlePermission {
 		try {
 			Object returnObj = PortalClassInvoker.invoke(false, _containsMethodKey, permissionChecker, article, actionId);
 
-			value = (boolean)returnObj;
+			value = GetterUtil.getBoolean(returnObj);
 
 		} catch (PortalException e) {
 			throw e;

@@ -49,7 +49,9 @@ public class WebContentRawEditorPortlet extends MVCPortlet {
 
 			JournalArticleServiceUtil.updateContent(article.getGroupId(), article.getArticleId(), article.getVersion(), content);
 
-		} catch (PortalException | SystemException e) {
+		} catch (PortalException e) {
+			throw new PortletException(e);
+		} catch (SystemException e) {
 			throw new PortletException(e);
 		}
 	}
