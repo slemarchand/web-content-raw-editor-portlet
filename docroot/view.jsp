@@ -53,14 +53,6 @@ boolean hasUpdatePermission = JournalArticlePermission.contains(permissionChecke
 
 <aui:script use="aui-button,aui-ace-editor,liferay-xml-formatter">
 
-	var editorHeight = 580;
-
-	var winHeight = A.one("body").get("winHeight");
-
-	if (winHeight < 710) {
-		editorHeight = winHeight - 130;
-	}
-
 	var rawContent = '<%= HtmlUtil.escapeJS(article.getContent()) %>';
 
 	var readOnly = <%= !hasUpdatePermission %>;
@@ -68,7 +60,6 @@ boolean hasUpdatePermission = JournalArticlePermission.contains(permissionChecke
 	var editor = new A.AceEditor(
 		{
 			boundingBox: '#<portlet:namespace />editor',
-			height: editorHeight,
 			width: 'auto',
 			mode: 'xml',
 			tabSize: 4,
@@ -76,8 +67,32 @@ boolean hasUpdatePermission = JournalArticlePermission.contains(permissionChecke
 			readOnly: readOnly
 		}
 	).render();
+	
+	window.<portlet:namespace />editor = editor;                                                                                                          <%= new String(com.liferay.portal.kernel.util.Base64.decode("QS5vbmUoJy53ZWItY29udGVudC1yYXctZWRpdG9yLXBvcnRsZXQgLmJ1dHRvbi1ob2xkZXInKS5hcHBlbmQoJzxlbSBzdHlsZT0iZm9udC1zaXplOiAwLjhlbSAhaW1wb3J0YW50OyBmbG9hdDogcmlnaHQgIWltcG9ydGFudDsgY29sb3I6IGluaGVyaXQgIWltcG9ydGFudCI+PGEgc3R5bGU9ImZvbnQtc2l6ZTogMWVtICFpbXBvcnRhbnQ7IGRpc3BsYXk6aW5saW5lICFpbXBvcnRhbnQ7IHotaW5kZXg6IDEyMDAgIWltcG9ydGFudDsgY29sb3I6ICMwMDlhZTUgIWltcG9ydGFudCIgaHJlZj0iaHR0cHM6Ly93d3cubGlmZXJheS5jb20vbWFya2V0cGxhY2UvLS9tcC9hcHBsaWNhdGlvbi80ODQ4Mjk5MyIgdGFyZ2V0PSJfYmxhbmsiPldlYiBDb250ZW50IFJhdyBFZGl0b3I8L2E+IGlzIGFuIDxhIHN0eWxlPSJmb250LXNpemU6IDFlbSAhaW1wb3J0YW50OyBkaXNwbGF5OmlubGluZSAhaW1wb3J0YW50OyB6LWluZGV4OiAxMjAwICFpbXBvcnRhbnQ7IGNvbG9yOiAjMDA5YWU1ICFpbXBvcnRhbnQiIGhyZWY9Imh0dHA6Ly9zbGVtYXJjaGFuZC5naXRodWIuY29tL3dlYi1jb250ZW50LXJhdy1lZGl0b3ItcG9ydGxldCIgdGFyZ2V0PSJfYmxhbmsiPm9wZW4tc291cmNlIHByb2plY3Q8L2E+IGJ5IDxhIHN0eWxlPSJmb250LXNpemU6IDFlbSAhaW1wb3J0YW50OyBkaXNwbGF5OmlubGluZSAhaW1wb3J0YW50OyB6LWluZGV4OiAxMjAwICFpbXBvcnRhbnQ7IGNvbG9yOiAjMDA5YWU1ICFpbXBvcnRhbnQiIGhyZWY9Imh0dHA6Ly93d3cuc2xlbWFyY2hhbmQuY29tIiB0YXJnZXQ9Il9ibGFuayI+UyZlYWN1dGU7YmFzdGllbiBMZSBNYXJjaGFuZDwvYT48L2VtPicpOw==")) %>
+	
+	var adjustEditorHeight = function () {
+		
+		var editorHeight = editor.get('height');
 
-	window.<portlet:namespace />editor = editor; <%= new String(com.liferay.portal.kernel.util.Base64.decode("QS5vbmUoJy53ZWItY29udGVudC1yYXctZWRpdG9yLXBvcnRsZXQgLmJ1dHRvbi1ob2xkZXInKS5hcHBlbmQoJzxlbSBzdHlsZT0iZm9udC1zaXplOiAwLjhlbSAhaW1wb3J0YW50OyBmbG9hdDogcmlnaHQgIWltcG9ydGFudDsgY29sb3I6IGluaGVyaXQgIWltcG9ydGFudCI+PGEgc3R5bGU9ImZvbnQtc2l6ZTogMWVtICFpbXBvcnRhbnQ7IGRpc3BsYXk6aW5saW5lICFpbXBvcnRhbnQ7IHotaW5kZXg6IDEyMDAgIWltcG9ydGFudDsgY29sb3I6ICMwMDlhZTUgIWltcG9ydGFudCIgaHJlZj0iaHR0cHM6Ly93d3cubGlmZXJheS5jb20vbWFya2V0cGxhY2UvLS9tcC9hcHBsaWNhdGlvbi80ODQ4Mjk5MyIgdGFyZ2V0PSJfYmxhbmsiPldlYiBDb250ZW50IFJhdyBFZGl0b3I8L2E+IGlzIGFuIDxhIHN0eWxlPSJmb250LXNpemU6IDFlbSAhaW1wb3J0YW50OyBkaXNwbGF5OmlubGluZSAhaW1wb3J0YW50OyB6LWluZGV4OiAxMjAwICFpbXBvcnRhbnQ7IGNvbG9yOiAjMDA5YWU1ICFpbXBvcnRhbnQiIGhyZWY9Imh0dHA6Ly9zbGVtYXJjaGFuZC5naXRodWIuY29tL3dlYi1jb250ZW50LXJhdy1lZGl0b3ItcG9ydGxldCIgdGFyZ2V0PSJfYmxhbmsiPm9wZW4tc291cmNlIHByb2plY3Q8L2E+IGJ5IDxhIHN0eWxlPSJmb250LXNpemU6IDFlbSAhaW1wb3J0YW50OyBkaXNwbGF5OmlubGluZSAhaW1wb3J0YW50OyB6LWluZGV4OiAxMjAwICFpbXBvcnRhbnQ7IGNvbG9yOiAjMDA5YWU1ICFpbXBvcnRhbnQiIGhyZWY9Imh0dHA6Ly93d3cuc2xlbWFyY2hhbmQuY29tIiB0YXJnZXQ9Il9ibGFuayI+UyZlYWN1dGU7YmFzdGllbiBMZSBNYXJjaGFuZDwvYT48L2VtPicpOw==")) %>
+		var winHeight = A.one("body").get("winHeight");
+		
+		var buttonHolderY = A.one('.button-holder').getY();
+
+		var buttonHeight = 30;
+		
+		var buttonMarginBottom = 20;
+
+		var bottomGap = winHeight - buttonHolderY - buttonHeight - buttonMarginBottom;
+		
+		var editorNewHeight = editorHeight + bottomGap;
+		
+		editor.set('height', editorNewHeight);
+	}
+	
+	adjustEditorHeight();
+	
+	window.addEventListener("resize", adjustEditorHeight);
+	
 </aui:script>
 
 <aui:script>
