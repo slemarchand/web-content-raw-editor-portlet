@@ -6,13 +6,19 @@
 	<language-properties>
 		content/Language.properties
 	</language-properties>
-	<language-properties>
-		content/Language.properties
-	</language-properties>
 	<custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+	<servlet-filter>
+		<servlet-filter-name>Raw Editor Redirect Filter</servlet-filter-name>
+		<servlet-filter-impl>com.slemarchand.webcontentraweditor.hook.filters.RawEditorRedirectFilter</servlet-filter-impl>
+	</servlet-filter>
+	<servlet-filter-mapping>
+		<servlet-filter-name>Raw Editor Redirect Filter</servlet-filter-name>
+		<after-filter>Absolute Redirects Filter</after-filter>
+		<url-pattern>/c/wcre</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</servlet-filter-mapping>
 	<struts-action>
 		<struts-action-path>/portal/wcre</struts-action-path>
-		<struts-action-impl>com.slemarchand.webcontentraweditor.hook.action.WebContentRawEditorAction</struts-action-impl>
+		<struts-action-impl>com.slemarchand.webcontentraweditor.hook.action.RawEditorRedirectAction</struts-action-impl>
 	</struts-action>
-
 </hook>

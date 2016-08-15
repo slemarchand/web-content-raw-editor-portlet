@@ -17,7 +17,7 @@ import javax.portlet.PortletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class WebContentRawEditorAction extends BaseStrutsAction {
+public class RawEditorRedirectAction extends BaseStrutsAction {
 
 	@Override
 	public String execute(HttpServletRequest request,
