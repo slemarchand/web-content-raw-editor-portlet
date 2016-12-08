@@ -21,3 +21,4 @@ docroot/WEB-INF/tld/liferay-util.tld
 .classpath
 .project
 .tern-project
+target
