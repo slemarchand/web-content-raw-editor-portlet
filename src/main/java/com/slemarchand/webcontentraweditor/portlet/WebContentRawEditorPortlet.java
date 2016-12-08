@@ -16,11 +16,18 @@ package com.slemarchand.webcontentraweditor.portlet;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.ExportImportThreadLocal;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.security.auth.PrincipalException;
+import com.liferay.portal.security.permission.ActionKeys;
+import com.liferay.portal.security.permission.PermissionThreadLocal;
+import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.service.ServiceContextThreadLocal;
 import com.liferay.portlet.journal.model.JournalArticle;
+import com.liferay.portlet.journal.service.JournalArticleLocalServiceUtil;
 import com.liferay.portlet.journal.service.JournalArticleServiceUtil;
+import com.slemarchand.webcontentraweditor.util.JournalArticlePermission;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
 import java.io.IOException;
@@ -43,12 +50,30 @@ public class WebContentRawEditorPortlet extends MVCPortlet {
 
 		String content = ParamUtil.getString(actionRequest, "content");
 
+		ServiceContext serviceContext = ServiceContextThreadLocal.getServiceContext();
+		
+		long userId  = serviceContext.getUserId();
+		
 		try {
 
 			JournalArticle article = JournalArticleServiceUtil.getArticle(id);
-
-			JournalArticleServiceUtil.updateContent(article.getGroupId(), article.getArticleId(), article.getVersion(), content);
-
+			
+			JournalArticlePermission.check(
+					PermissionThreadLocal.getPermissionChecker(), article,
+					ActionKeys.UPDATE);
+			
+			// Need to simulate import process to be allowed to update any 
+			// version of the article. 
+			ExportImportThreadLocal.setPortletImportInProcess(true);
+			
+			JournalArticleLocalServiceUtil.updateArticle(
+					userId, 
+					article.getGroupId(), article.getFolderId(),
+					article.getArticleId(), article.getVersion(), 
+					article.getTitleMap(), article.getDescriptionMap(), 
+					content,
+					article.getLayoutUuid(), serviceContext);
+			
 		} catch (PortalException e) {
 			throw new PortletException(e);
 		} catch (SystemException e) {
